@@ -76,11 +76,19 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL')
-    )
-}
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'iptdidoy12345678901020102101231829124948',
+        'USER': 'iptdidoy12345678901020102101231829124948_user',
+        'PASSWORD': 'LTrHJSbOOL4MmYxy83YmuY8gSbe3YDaI',
+        'HOST': 'dpg-d6cj10ggjchc739lpofg-a.oregon-postgres.render.com',
+        'PORT': '5432',
 
+        'OPTIONS':{
+            'sslmode': 'require'
+        }
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
