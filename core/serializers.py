@@ -12,9 +12,12 @@ class AuthorSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class BookSerializer(serializers.ModelSerializer):
+    # This allows the frontend to see the name, not just the ID number
+    author_name = serializers.ReadOnlyField(source='author_id.author_name')
+    
     class Meta:
         model = Book
-        fields = '__all__'
+        fields = ['book_id', 'book_name', 'date_published', 'author_id', 'author_name', 'library_id']
 
 class MemberSerializer(serializers.ModelSerializer):
     class Meta:
